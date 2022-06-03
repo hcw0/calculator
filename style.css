@@ -1,0 +1,32 @@
+* {
+    /* outline: 2px solid red; */
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+    margin: 0;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header > h1 {
+    font-size: 5em;
+    font-weight: 300;
+}
+
+.line{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    height: 10px;
+    width: 10em;
+}
