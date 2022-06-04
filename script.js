@@ -117,3 +117,15 @@ clear.addEventListener("click", () => {
     display_previous.textContent = "";
     display_current.textContent = "0";
 });
+
+let del = document.querySelector("#delete");
+del.addEventListener("click", () =>{
+    let currentNumber = display_current.textContent;
+    if(currentNumber != 0){
+        if(currentNumber.length > 1){
+            display_current.textContent = currentNumber.substring(1, currentNumber.length);
+        } else {
+            display_current.textContent = "0";
+        }
+    }
+});
