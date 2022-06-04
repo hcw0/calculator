@@ -107,9 +107,7 @@ equals.addEventListener("click", () => {
         allowedNumber = false;
         operator = "+";
     }
-
 });
-
 
 let clear = document.querySelector("#clear");
 clear.addEventListener("click", () => {
