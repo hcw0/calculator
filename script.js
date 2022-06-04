@@ -115,7 +115,7 @@ let completeOperation = (x, y) => {
 equals.addEventListener("click", () => {
     if(firstNumber != null){
         let inputNumber = parseFloat(display_current.textContent);
-        if(inputNumber == 0){
+        if(inputNumber == 0 && operator == "/"){
             operate("/", firstNumber, inputNumber);
         } else {
             firstNumber = completeOperation(firstNumber, inputNumber);
