@@ -33,6 +33,10 @@ let multiply = (x, y) => x * y;
 let divide = (x , y) => {
     if (y !== 0){
         return x / y;
+    } else{
+        clearFunction();
+        alert("Division by 0 is not allowed");
+        return;
     }
 }
 let exponent = (base, exponent) => Math.pow(base, exponent);
@@ -111,22 +115,29 @@ let completeOperation = (x, y) => {
 equals.addEventListener("click", () => {
     if(firstNumber != null){
         let inputNumber = parseFloat(display_current.textContent);
-        firstNumber = completeOperation(firstNumber, inputNumber);
-        allowedNumber = false;
-        operator = "+";
-        dotAllowed = true;
+        if(inputNumber == 0){
+            operate("/", firstNumber, inputNumber);
+        } else {
+            firstNumber = completeOperation(firstNumber, inputNumber);
+            allowedNumber = false;
+            operator = "+";
+            dotAllowed = true;
+        }
+
     }
 });
 
-let clear = document.querySelector("#clear");
-clear.addEventListener("click", () => {
+let clearFunction = () => {
     firstNumber = secondNumber = null; 
     operator = "";
     allowedNumber = true;
     display_previous.textContent = "";
     display_current.textContent = "0";
     dotAllowed = true;
-});
+}
+
+let clear = document.querySelector("#clear");
+clear.addEventListener("click", clearFunction);
 
 let del = document.querySelector("#delete");
 del.addEventListener("click", () =>{
