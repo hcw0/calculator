@@ -4,6 +4,7 @@ firstNumber = secondNumber = null;
 let operator = "";
 
 let allowedNumber = true;
+let dotAllowed = true;
 
 let display_previous = document.querySelector(".previous-operations");
 let display_current = document.querySelector(".current-operations");
@@ -60,7 +61,7 @@ numbers.forEach(number => {
 let operations = document.querySelectorAll(".operations");
 operations.forEach(operation => {
     operation.addEventListener("click", () =>{
-        let inputNumber = parseInt(display_current.textContent, 10);
+        let inputNumber = parseFloat(display_current.textContent);
         if(firstNumber == null){
             firstNumber = inputNumber;
         } else if(secondNumber == null){
@@ -85,8 +86,16 @@ operations.forEach(operation => {
             display_current.textContent = "0"; 
             allowedNumber = true;
         }
-
+        dotAllowed = true;
     });
+});
+
+let dot = document.querySelector(".dot");
+dot.addEventListener("click", () =>{
+    if(dotAllowed){
+        display_current.textContent += ".";
+        dotAllowed = false;
+    }
 });
 
 let equals = document.querySelector(".equals");
@@ -97,15 +106,15 @@ let completeOperation = (x, y) => {
     display_current.textContent = "0";
     secondNumber = 0;
     return result;
-
 }
 
 equals.addEventListener("click", () => {
     if(firstNumber != null){
-        let inputNumber = parseInt(display_current.textContent, 10);
+        let inputNumber = parseFloat(display_current.textContent);
         firstNumber = completeOperation(firstNumber, inputNumber);
         allowedNumber = false;
         operator = "+";
+        dotAllowed = true;
     }
 });
 
@@ -116,11 +125,13 @@ clear.addEventListener("click", () => {
     allowedNumber = true;
     display_previous.textContent = "";
     display_current.textContent = "0";
+    dotAllowed = true;
 });
 
 let del = document.querySelector("#delete");
 del.addEventListener("click", () =>{
     let currentNumber = display_current.textContent;
+    dotAllowed = true;
     if(currentNumber != 0){
         if(currentNumber.length > 1){
             display_current.textContent = currentNumber.substring(1, currentNumber.length);
