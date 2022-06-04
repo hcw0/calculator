@@ -101,9 +101,13 @@ let completeOperation = (x, y) => {
 }
 
 equals.addEventListener("click", () => {
-    let inputNumber = parseInt(display_current.textContent, 10);
-    firstNumber = completeOperation(firstNumber, inputNumber);
-    allowedNumber = false;
+    if(firstNumber != null){
+        let inputNumber = parseInt(display_current.textContent, 10);
+        firstNumber = completeOperation(firstNumber, inputNumber);
+        allowedNumber = false;
+        operator = "+";
+    }
+
 });
 
 
