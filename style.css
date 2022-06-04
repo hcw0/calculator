@@ -116,12 +116,12 @@ span {
     font-size: 80%;
 }
 
-.functions {
+.functions, .operations {
     background-color: #fee440;  
     color: black;
 }
 
-.numbers {
+.numbers, .change-sign, .dot {
     color: #fee440;
     background-color: rgba(52, 52, 52, 0.8);
 }
