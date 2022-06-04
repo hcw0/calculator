@@ -1,5 +1,5 @@
 * {
-    outline: 2px solid red;
+    /* outline: 2px solid red; */
     box-sizing: border-box;
 }
 
@@ -7,6 +7,10 @@
 body {
     font-family: 'Titillium Web', sans-serif;
     margin: 0;
+}
+
+button {
+    font-family : inherit;
 }
 
 .flex-container {
@@ -30,36 +34,61 @@ body {
 }
 
 .line{
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
+    border-top: 2px solid #f6bd60;
+    border-bottom: 2px solid #f6bd60;
     height: 10px;
     width: 10em;
 }
 
 .calculator-body {
     width: 22vw;
-    height: 75vh;
+    height: 80vh;
     margin-right: 0;
     padding: 0;
-    border-radius: 2em;
+    border-radius: 2.5em;
     /* background-color: #000000;
     background-image: linear-gradient(315deg, #000000 0%, #414141 74%); */
     background: rgb(0,0,0);
-    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(40,40,40,1) 100%);
+    /* background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgb(60, 60, 60) 100%); */
+    /* background: linear-gradient(rgba(0,0,0,1), rgb(60, 60, 60)); */
+    background-color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 3em;
 }
 
 .display {
-    width: 90%;
-    height: 30%;
+    width: 85%;
+    min-height: 30%;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    border-bottom: 2px solid #f6bd60;
+    overflow: hidden;
+}
+
+.current-operations, .previous-operations {
+    color: white;
+}
+
+.current-operations {
+    margin-bottom: 1em;
+    margin-top: 0;
+    font-size: 3em;
+}
+
+.previous-operations {
+    margin: 0;
 }
 
 .buttons {
+    margin-bottom: 2em;
     flex-grow: 3;
-    width: 90%;
+    width: 85%;
     height: 70%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -70,17 +99,33 @@ body {
 }
 
 .buttons > button {
-    font-size: 2em;
+    font-size: 1.5em;
     border-radius: .5em;
-    color: white;
     text-align: center;
     cursor: pointer;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 0;
 }
 
+span {
+    position: relative;
+    bottom: 1ex; 
+    font-size: 80%;
+}
 
+.functions {
+    background-color: #fee440;  
+    color: black;
+}
 
+.numbers {
+    color: #fee440;
+    background-color: rgba(52, 52, 52, 0.8);
+}
 
+.equals {
+    background-color: #f6bd60;
+}
