@@ -145,7 +145,7 @@ del.addEventListener("click", () =>{
     dotAllowed = true;
     if(currentNumber != 0){
         if(currentNumber.length > 1){
-            display_current.textContent = currentNumber.substring(1, currentNumber.length);
+            display_current.textContent = currentNumber.substring(0, currentNumber.length -1);
         } else {
             display_current.textContent = "0";
         }
